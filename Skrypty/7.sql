@@ -1,0 +1,2 @@
+ALTER TABLE dbo.Klienci
+DROP COLUMN PESEL

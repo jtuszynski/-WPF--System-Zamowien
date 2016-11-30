@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="systemOrdersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adre">
+    <Key>
+      <PropertyRef Name="id_adresu" />
+    </Key>
+    <Property Name="id_adresu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="miejscowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numer_domu" Type="Int32" />
+    <Property Name="wojewodztwo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="powiat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gmina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kod_pocztowy" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Firmas" Relationship="Self.FK_Firma_Adres" FromRole="Adres" ToRole="Firma" />
+    <NavigationProperty Name="Kliencis" Relationship="Self.FK_Klienci_Adres" FromRole="Adres" ToRole="Klienci" />
+  </EntityType>
+  <EntityType Name="Firma">
+    <Key>
+      <PropertyRef Name="id_firmy" />
+    </Key>
+    <Property Name="id_firmy" Type="Int32" Nullable="false" />
+    <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_adresu" Type="Int32" />
+    <Property Name="nip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="haslo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Adre" Relationship="Self.FK_Firma_Adres" FromRole="Firma" ToRole="Adres" />
+    <NavigationProperty Name="Zamowienies" Relationship="Self.FK_Zamowienie_Firma" FromRole="Firma" ToRole="Zamowienie" />
+  </EntityType>
+  <EntityType Name="Klienci">
+    <Key>
+      <PropertyRef Name="id_klienta" />
+    </Key>
+    <Property Name="id_klienta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nip" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="id_adresu" Type="Int32" />
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="haslo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Adre" Relationship="Self.FK_Klienci_Adres" FromRole="Klienci" ToRole="Adres" />
+    <NavigationProperty Name="Zamowienies" Relationship="Self.FK_Zamowienie_Klienci" FromRole="Klienci" ToRole="Zamowienie" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="id_log" />
+    </Key>
+    <Property Name="id_log" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tresc_loga" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="StatusZamowienia">
+    <Key>
+      <PropertyRef Name="id_statusu" />
+    </Key>
+    <Property Name="id_statusu" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Zamowienies" Relationship="Self.FK_Zamowienie_StatusZamowienia" FromRole="StatusZamowienia" ToRole="Zamowienie" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Towar">
+    <Key>
+      <PropertyRef Name="id_towaru" />
+    </Key>
+    <Property Name="id_towaru" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cena" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="opis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_firmy" Type="Int32" />
+    <NavigationProperty Name="ZamowioneTowaries" Relationship="Self.FK_ZamowioneTowary_Towar" FromRole="Towar" ToRole="ZamowioneTowary" />
+  </EntityType>
+  <EntityType Name="Zamowienie">
+    <Key>
+      <PropertyRef Name="id_zamowienia" />
+    </Key>
+    <Property Name="id_zamowienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_klienta" Type="Int32" Nullable="false" />
+    <Property Name="id_firmy" Type="Int32" Nullable="false" />
+    <Property Name="id_statusu" Type="Int32" Nullable="false" />
+    <Property Name="data_zamowienia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="data_otrzymania" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="kwota_zamowienia" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Firma" Relationship="Self.FK_Zamowienie_Firma" FromRole="Zamowienie" ToRole="Firma" />
+    <NavigationProperty Name="Klienci" Relationship="Self.FK_Zamowienie_Klienci" FromRole="Zamowienie" ToRole="Klienci" />
+    <NavigationProperty Name="StatusZamowienia" Relationship="Self.FK_Zamowienie_StatusZamowienia" FromRole="Zamowienie" ToRole="StatusZamowienia" />
+    <NavigationProperty Name="ZamowioneTowaries" Relationship="Self.FK_ZamowioneTowary_Zamowienie" FromRole="Zamowienie" ToRole="ZamowioneTowary" />
+  </EntityType>
+  <EntityType Name="ZamowioneTowary">
+    <Key>
+      <PropertyRef Name="id_zamowione_tow" />
+    </Key>
+    <Property Name="id_zamowione_tow" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_zamowienia" Type="Int32" Nullable="false" />
+    <Property Name="id_towaru" Type="Int32" Nullable="false" />
+    <Property Name="ilosc" Type="Int32" Nullable="false" />
+    <Property Name="kwota" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Towar" Relationship="Self.FK_ZamowioneTowary_Towar" FromRole="ZamowioneTowary" ToRole="Towar" />
+    <NavigationProperty Name="Zamowienie" Relationship="Self.FK_ZamowioneTowary_Zamowienie" FromRole="ZamowioneTowary" ToRole="Zamowienie" />
+  </EntityType>
+  <Association Name="FK_Firma_Adres">
+    <End Role="Adres" Type="Self.Adre" Multiplicity="0..1" />
+    <End Role="Firma" Type="Self.Firma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="id_adresu" />
+      </Principal>
+      <Dependent Role="Firma">
+        <PropertyRef Name="id_adresu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klienci_Adres">
+    <End Role="Adres" Type="Self.Adre" Multiplicity="0..1" />
+    <End Role="Klienci" Type="Self.Klienci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="id_adresu" />
+      </Principal>
+      <Dependent Role="Klienci">
+        <PropertyRef Name="id_adresu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Firma">
+    <End Role="Firma" Type="Self.Firma" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firma">
+        <PropertyRef Name="id_firmy" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="id_firmy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Klienci">
+    <End Role="Klienci" Type="Self.Klienci" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klienci">
+        <PropertyRef Name="id_klienta" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="id_klienta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_StatusZamowienia">
+    <End Role="StatusZamowienia" Type="Self.StatusZamowienia" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusZamowienia">
+        <PropertyRef Name="id_statusu" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="id_statusu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZamowioneTowary_Towar">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="1" />
+    <End Role="ZamowioneTowary" Type="Self.ZamowioneTowary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="id_towaru" />
+      </Principal>
+      <Dependent Role="ZamowioneTowary">
+        <PropertyRef Name="id_towaru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZamowioneTowary_Zamowienie">
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="1" />
+    <End Role="ZamowioneTowary" Type="Self.ZamowioneTowary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zamowienie">
+        <PropertyRef Name="id_zamowienia" />
+      </Principal>
+      <Dependent Role="ZamowioneTowary">
+        <PropertyRef Name="id_zamowienia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="systemOrdersEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adres" EntityType="Self.Adre" />
+    <EntitySet Name="Firmas" EntityType="Self.Firma" />
+    <EntitySet Name="Kliencis" EntityType="Self.Klienci" />
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+    <EntitySet Name="StatusZamowienias" EntityType="Self.StatusZamowienia" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Towars" EntityType="Self.Towar" />
+    <EntitySet Name="Zamowienies" EntityType="Self.Zamowienie" />
+    <EntitySet Name="ZamowioneTowaries" EntityType="Self.ZamowioneTowary" />
+    <AssociationSet Name="FK_Firma_Adres" Association="Self.FK_Firma_Adres">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Firma" EntitySet="Firmas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klienci_Adres" Association="Self.FK_Klienci_Adres">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Klienci" EntitySet="Kliencis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Firma" Association="Self.FK_Zamowienie_Firma">
+      <End Role="Firma" EntitySet="Firmas" />
+      <End Role="Zamowienie" EntitySet="Zamowienies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Klienci" Association="Self.FK_Zamowienie_Klienci">
+      <End Role="Klienci" EntitySet="Kliencis" />
+      <End Role="Zamowienie" EntitySet="Zamowienies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_StatusZamowienia" Association="Self.FK_Zamowienie_StatusZamowienia">
+      <End Role="StatusZamowienia" EntitySet="StatusZamowienias" />
+      <End Role="Zamowienie" EntitySet="Zamowienies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZamowioneTowary_Towar" Association="Self.FK_ZamowioneTowary_Towar">
+      <End Role="Towar" EntitySet="Towars" />
+      <End Role="ZamowioneTowary" EntitySet="ZamowioneTowaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZamowioneTowary_Zamowienie" Association="Self.FK_ZamowioneTowary_Zamowienie">
+      <End Role="Zamowienie" EntitySet="Zamowienies" />
+      <End Role="ZamowioneTowary" EntitySet="ZamowioneTowaries" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

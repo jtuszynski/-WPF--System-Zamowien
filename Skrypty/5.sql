@@ -1,0 +1,1 @@
+﻿INSERT INTO dbo.Adres values ('Mstów','Kościelna',2,'Śląskie','Częstochowski','Mstów','42-244');

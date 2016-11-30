@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="systemOrdersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="id_adresu" />
+    </Key>
+    <Property Name="id_adresu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="miejscowosc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ulica" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numer_domu" Type="int" />
+    <Property Name="wojewodztwo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="powiat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gmina" Type="varchar" MaxLength="50" />
+    <Property Name="kod_pocztowy" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="Firma">
+    <Key>
+      <PropertyRef Name="id_firmy" />
+    </Key>
+    <Property Name="id_firmy" Type="int" Nullable="false" />
+    <Property Name="nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_adresu" Type="int" />
+    <Property Name="nip" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="haslo" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klienci">
+    <Key>
+      <PropertyRef Name="id_klienta" />
+    </Key>
+    <Property Name="id_klienta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nip" Type="varchar" MaxLength="13" />
+    <Property Name="id_adresu" Type="int" />
+    <Property Name="login" Type="varchar" MaxLength="20" />
+    <Property Name="haslo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="id_log" />
+    </Key>
+    <Property Name="id_log" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tresc_loga" Type="varchar" MaxLength="800" />
+    <Property Name="data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StatusZamowienia">
+    <Key>
+      <PropertyRef Name="id_statusu" />
+    </Key>
+    <Property Name="id_statusu" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Towar">
+    <Key>
+      <PropertyRef Name="id_towaru" />
+    </Key>
+    <Property Name="id_towaru" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cena" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="opis" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_firmy" Type="int" />
+  </EntityType>
+  <EntityType Name="Zamowienie">
+    <Key>
+      <PropertyRef Name="id_zamowienia" />
+    </Key>
+    <Property Name="id_zamowienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_klienta" Type="int" Nullable="false" />
+    <Property Name="id_firmy" Type="int" Nullable="false" />
+    <Property Name="id_statusu" Type="int" Nullable="false" />
+    <Property Name="data_zamowienia" Type="date" Nullable="false" />
+    <Property Name="data_otrzymania" Type="date" Nullable="false" />
+    <Property Name="kwota_zamowienia" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="ZamowioneTowary">
+    <Key>
+      <PropertyRef Name="id_zamowione_tow" />
+    </Key>
+    <Property Name="id_zamowione_tow" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_zamowienia" Type="int" Nullable="false" />
+    <Property Name="id_towaru" Type="int" Nullable="false" />
+    <Property Name="ilosc" Type="int" Nullable="false" />
+    <Property Name="kwota" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Firma_Adres">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <End Role="Firma" Type="Self.Firma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="id_adresu" />
+      </Principal>
+      <Dependent Role="Firma">
+        <PropertyRef Name="id_adresu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klienci_Adres">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <End Role="Klienci" Type="Self.Klienci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="id_adresu" />
+      </Principal>
+      <Dependent Role="Klienci">
+        <PropertyRef Name="id_adresu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Firma">
+    <End Role="Firma" Type="Self.Firma" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firma">
+        <PropertyRef Name="id_firmy" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="id_firmy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Klienci">
+    <End Role="Klienci" Type="Self.Klienci" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klienci">
+        <PropertyRef Name="id_klienta" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="id_klienta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_StatusZamowienia">
+    <End Role="StatusZamowienia" Type="Self.StatusZamowienia" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusZamowienia">
+        <PropertyRef Name="id_statusu" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="id_statusu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZamowioneTowary_Towar">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="1" />
+    <End Role="ZamowioneTowary" Type="Self.ZamowioneTowary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="id_towaru" />
+      </Principal>
+      <Dependent Role="ZamowioneTowary">
+        <PropertyRef Name="id_towaru" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZamowioneTowary_Zamowienie">
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="1" />
+    <End Role="ZamowioneTowary" Type="Self.ZamowioneTowary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zamowienie">
+        <PropertyRef Name="id_zamowienia" />
+      </Principal>
+      <Dependent Role="ZamowioneTowary">
+        <PropertyRef Name="id_zamowienia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="systemOrdersModelStoreContainer">
+    <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Firma" EntityType="Self.Firma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klienci" EntityType="Self.Klienci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusZamowienia" EntityType="Self.StatusZamowienia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Towar" EntityType="Self.Towar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZamowioneTowary" EntityType="Self.ZamowioneTowary" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Firma_Adres" Association="Self.FK_Firma_Adres">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Firma" EntitySet="Firma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klienci_Adres" Association="Self.FK_Klienci_Adres">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Klienci" EntitySet="Klienci" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Firma" Association="Self.FK_Zamowienie_Firma">
+      <End Role="Firma" EntitySet="Firma" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Klienci" Association="Self.FK_Zamowienie_Klienci">
+      <End Role="Klienci" EntitySet="Klienci" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_StatusZamowienia" Association="Self.FK_Zamowienie_StatusZamowienia">
+      <End Role="StatusZamowienia" EntitySet="StatusZamowienia" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZamowioneTowary_Towar" Association="Self.FK_ZamowioneTowary_Towar">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="ZamowioneTowary" EntitySet="ZamowioneTowary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZamowioneTowary_Zamowienie" Association="Self.FK_ZamowioneTowary_Zamowienie">
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+      <End Role="ZamowioneTowary" EntitySet="ZamowioneTowary" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

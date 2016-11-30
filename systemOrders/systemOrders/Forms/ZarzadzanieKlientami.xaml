@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="systemOrders.Forms.ZarzadzanieKlientami"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="178,55,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="ZARZĄDZANIE KLIENTAMI- JEŚLI PANEL DODAWANIA/EDYCJI JEST ZABLOKOWANY NALEŻY WYBRAC Z DWÓCH OPCJI - 'EDYTUJ' lub 'DODAJ'" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Width="780"/>
+        <DockPanel HorizontalAlignment="Left" Height="548" LastChildFill="False" Margin="10,0,-10,-48" VerticalAlignment="Top" Width="800">
+            <GroupBox Header="Panel dodawania klienta" IsEnabled="False" Name="gbDodajEdytujKlienta" Height="301" VerticalAlignment="Top" Margin="0,48,0,-101" Width="260" Foreground="#FF002BEE" Cursor="Arrow">
+                <GroupBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.007"/>
+                        <GradientStop Color="#FF5F0808" Offset="0.064"/>
+                        <GradientStop Color="#FF702E2E" Offset="0.98"/>
+                    </LinearGradientBrush>
+                </GroupBox.Background>
+                <StackPanel Margin="0,0,0,-110">
+                    <CheckBox Name="CzySzczegoloweDane" Height="15" Content="Szczegółowe dane" Foreground="White" Click="CzySzczegoloweDane_Click"/>
+                    <Button x:Name="btnDodajEdytujKlienta" Content="Dodaj klienta" Margin="119,0,0,0" Cursor="Hand" Click="btnDodajEdytujKlienta_Click"/>
+                    <Label Content="Imie" Margin="0,0,0,0" Foreground="#FFF7ECEC"></Label>
+                    <TextBox  Name="txbImie" Height="20" Margin="0,0,0,0" ToolTip="Imię klienta." TextWrapping="Wrap" Text="" VerticalAlignment="Top" Cursor="Pen" FontSize="10" FontFamily="MS Reference Sans Serif"/>
+                    <Label  Content="Nazwisko" Margin="0,0,0,0" Foreground="#FFF7ECEC"></Label>
+                    <TextBox Height="20" TextWrapping="Wrap" Name="txbNazwisko" ToolTip="Nazwisko klienta." Text="" Margin="0,0,0,0" Cursor="Pen" FontSize="10"/>
+                    <Label  Content="NIP" Margin="0,0,0,0" Foreground="#FFF7ECEC"></Label>
+                    <TextBox Height="20"  FontSize="10" FontFamily="MS Reference Sans Serif" TextWrapping="Wrap" Name="txbNIP" Text=""  Margin="0,0,0,0" Cursor="Pen" ToolTip=" NIP Klienta. Pole nieobowiązkowe. Wzory - 333-22-22-333 lub 333-333-22-22"/>
+                    <Label Content="login" Margin="0,0,0,0" Foreground="#FFF7ECEC"></Label>
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif" Name="txbLogin" Cursor="Pen" ToolTip="Login klienta. "  Height="20" />
+                    <Label  Content="hasło" Margin="0,0,0,0" Foreground="#FFF7ECEC"></Label>
+                    <!--<PasswordBox  Margin="0,0,0,0"  Name="txbHaslo"  Cursor="Pen" ToolTip="Hasło klienta. "  Height="20" />-->
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif"  Name="txbHaslo"  Cursor="Pen" ToolTip="Hasło klienta. "  Height="20"  />
+                    <Label Content="miejscowość" Name="lmiejscowosc" Margin="0,0,0,0" Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif" Height="20"  Name="txbMiejscowosc" Cursor="Pen" ToolTip="Miejscowość zameldowania klienta. " Visibility="Hidden"  />
+                    <Label  Content="ulica" Margin="0,0,0,0" Name="lulica" Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif" Height="18" Name="txbUlica" Cursor="Pen" ToolTip="Ulica klienta. " Visibility="Hidden" />
+                    <Label Content="nr. domu" Margin="0,0,0,0" Name="lnrdomu" Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif" Height="18" Name="txbnrDomu" Cursor="Pen" ToolTip="Numer domu klienta. " Visibility="Hidden" />
+                    <Label  Content="województwo" Margin="0,0,0,0" Name="lwojedzodztwo" Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <!--<TextBox Margin="0,0,0,0" Height="20" Name="txbWojewodztwo"/>-->
+                    <ComboBox x:Name="cbWojewodztwo" SelectedValuePath="Content" Visibility="Hidden" >
+                        <ComboBoxItem Content="woj. dolnoslaskie"/>
+                        <ComboBoxItem Content="woj. kujawsko-pomorskie"/>
+                        <ComboBoxItem Content="woj. lubelskie"/>
+                        <ComboBoxItem Content="woj. lubuskie"/>
+                        <ComboBoxItem Content="woj. lodzkie"/>
+                        <ComboBoxItem Content="woj. malopolskie"/>
+                        <ComboBoxItem Content="woj. mazowieckie"/>
+                        <ComboBoxItem Content="woj. opolskie"/>
+                        <ComboBoxItem Content="woj. podkarpackie"/>
+                        <ComboBoxItem Content="woj. podlaskie"/>
+                        <ComboBoxItem Content="woj. pomorskie"/>
+                        <ComboBoxItem Content="woj. slaskie"/>
+                        <ComboBoxItem Content="woj. swietokrzyskie"/>
+                        <ComboBoxItem Content="woj. warminsko-mazurskie"/>
+                        <ComboBoxItem Content="woj. wielkopolskie"/>
+                        <ComboBoxItem Content="woj. zachodniopomorskie"/>
+                    </ComboBox>
+                    <Label Content="powiat"  Margin="0,0,0,0" Name="lpowiat" Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <TextBox Margin="0,0,0,0" Height="18" FontSize="10" FontFamily="MS Reference Sans Serif"  Name="txbPowiat" Cursor="Pen" ToolTip="Powiat, w którym mieszka klient. " Visibility="Hidden"/>
+                    <Label  Content="gmina" Margin="0,0,0,0" Name="lgmina" Cursor="Pen" ToolTip="Gmina klienta. " Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif" Height="18" Name="txbGmina" Visibility="Hidden" Cursor="Pen" ToolTip="Gmina, w której mieszka klient. " />
+                    <Label  Content="kod pocztowy" Name="lkodpocztowy" Margin="0,0,0,0" Foreground="#FFF7ECEC" Visibility="Hidden"></Label>
+                    <TextBox Margin="0,0,0,0"  FontSize="10" FontFamily="MS Reference Sans Serif" Height="18" Name="txbKodPocztowy" Cursor="Pen" ToolTip="Kod pocztowy klienta. Wzór - 42-244. " Visibility="Hidden" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Aktualni klienci w systemie zamówień" Height="301" VerticalAlignment="Top" Width="530" Margin="0,48,0,0" Foreground="#FF2D19F0" Cursor="Arrow">
+                <GroupBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5D0505" Offset="0.415"/>
+                        <GradientStop Color="#FFF1DCDC"/>
+                    </LinearGradientBrush>
+                </GroupBox.Background>
+                <DataGrid x:Name="dataGridKlienci" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,10,-2,0" VerticalAlignment="Top" Width="520" Height="254"/>
+
+            </GroupBox>
+            <GridSplitter Height="548" VerticalAlignment="Top" Width="5"/>
+            <GroupBox Header="Panel zarządzania klientami" Margin="-600,394,0,0" Height="126" VerticalAlignment="Top" Width="426" Foreground="#FF0B1109" Cursor="Arrow">
+                <GroupBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF6E0404" Offset="0.061"/>
+                        <GradientStop Color="#FFC54E4E" Offset="0.662"/>
+                    </LinearGradientBrush>
+                </GroupBox.Background>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+                    <Button x:Name="btnDodajKlienta" Content="Panel dodawania klienta" HorizontalAlignment="Left"   Width="275" Cursor="Hand" Click="btnDodajKlienta_Click"/>
+                    <Button x:Name="btnEdytujKlienta" Content="Panel edycji klienta" HorizontalAlignment="Left"  Width="275" Cursor="Hand" Click="btnEdytujKlienta_Click"/>
+                    <Button x:Name="btnUsunKlienta" Content="Usuń" HorizontalAlignment="Left"  Width="275" Cursor="Hand" Click="btnUsunKlienta_Click"/>
+
+                </StackPanel>
+            </GroupBox>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

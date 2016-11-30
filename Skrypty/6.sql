@@ -1,0 +1,1 @@
+INSERT INTO dbo.Firma values(1,'TUSZCOM',1,'9998887776','admin','admin');

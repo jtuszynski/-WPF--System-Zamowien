@@ -1,0 +1,59 @@
+﻿<Window x:Class="systemOrders.Forms.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="System zamówień - tuszcom @ Panel administratora @" MinHeight="800" WindowState="Maximized" MinWidth="800"  >
+    <Grid Cursor="Hand">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="357*"/>
+        </Grid.ColumnDefinitions>-->
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Height="20" Background="#FFA9D1F4" >
+                <MenuItem HorizontalAlignment="Right" VerticalAlignment="Stretch"  Header="Klienci">
+                    <MenuItem Header="_Zarządzaj klientami" Click="MenuItemZarzadzanieKlientami_Click">
+                        <MenuItem.Icon>
+                            <Image />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem  HorizontalAlignment="Right" VerticalAlignment="Stretch"  Header="Towary">
+                    <MenuItem Header="_Zarządzaj towarami" Click="MenuItemZardzanieTowarami_Click">
+                        <MenuItem.Icon>
+                            <Image  />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem HorizontalAlignment="Right" VerticalAlignment="Stretch"  Header="Zamówienia">
+                    <MenuItem Header="_Zarządzaj zamówieniami" Click="MenuItem_ZarzadzanieZamowieniami_Click">
+                        <MenuItem.Icon>
+                            <Image  />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Przegląd zamówień" Click="MenuItemPrzegladZamowien_Click" >
+                        <MenuItem.Icon>
+                            <Image  />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem  Header="Opcje" HorizontalAlignment="Right" VerticalAlignment="Stretch" >
+                    <MenuItem Header="Kontakt" Click="MenuItemKontakt_Click" >
+                        <MenuItem.Icon>
+                            <Image  />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Wyloguj" Click="MenuItemWyloguj_Click">
+                        <MenuItem.Icon>
+                            <Image  />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+
+            <!--<TextBox AcceptsReturn="True" />-->
+            <ContentControl>
+                <ContentControl  x:Name="contentControl" Margin="0,10,0,0" VerticalAlignment="Top" Width="800"  Height="600"/>
+            </ContentControl>
+        </DockPanel>
+        <Label Content=" ® copyright by Jakub Tuszynski 2016" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,0,0" Width="auto" Height="auto" Grid.Column="1"/>
+    </Grid>
+</Window>

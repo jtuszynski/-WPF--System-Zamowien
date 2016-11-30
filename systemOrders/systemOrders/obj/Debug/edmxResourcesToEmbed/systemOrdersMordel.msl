@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="systemOrdersModelStoreContainer" CdmEntityContainer="systemOrders">
+    <EntitySetMapping Name="Adres">
+      <EntityTypeMapping TypeName="systemOrdersModel.Adre">
+        <MappingFragment StoreEntitySet="Adres">
+          <ScalarProperty Name="id_adresu" ColumnName="id_adresu" />
+          <ScalarProperty Name="miejscowosc" ColumnName="miejscowosc" />
+          <ScalarProperty Name="ulica" ColumnName="ulica" />
+          <ScalarProperty Name="numer_domu" ColumnName="numer_domu" />
+          <ScalarProperty Name="wojewodztwo" ColumnName="wojewodztwo" />
+          <ScalarProperty Name="powiat" ColumnName="powiat" />
+          <ScalarProperty Name="gmina" ColumnName="gmina" />
+          <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firmas">
+      <EntityTypeMapping TypeName="systemOrdersModel.Firma">
+        <MappingFragment StoreEntitySet="Firma">
+          <ScalarProperty Name="id_firmy" ColumnName="id_firmy" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="id_adresu" ColumnName="id_adresu" />
+          <ScalarProperty Name="nip" ColumnName="nip" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kliencis">
+      <EntityTypeMapping TypeName="systemOrdersModel.Klienci">
+        <MappingFragment StoreEntitySet="Klienci">
+          <ScalarProperty Name="id_klienta" ColumnName="id_klienta" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="nip" ColumnName="nip" />
+          <ScalarProperty Name="id_adresu" ColumnName="id_adresu" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusZamowienias">
+      <EntityTypeMapping TypeName="systemOrdersModel.StatusZamowienia">
+        <MappingFragment StoreEntitySet="StatusZamowienia">
+          <ScalarProperty Name="id_statusu" ColumnName="id_statusu" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="systemOrdersModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Towars">
+      <EntityTypeMapping TypeName="systemOrdersModel.Towar">
+        <MappingFragment StoreEntitySet="Towar">
+          <ScalarProperty Name="id_towaru" ColumnName="id_towaru" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="cena" ColumnName="cena" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="id_firmy" ColumnName="id_firmy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zamowienies">
+      <EntityTypeMapping TypeName="systemOrdersModel.Zamowienie">
+        <MappingFragment StoreEntitySet="Zamowienie">
+          <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+          <ScalarProperty Name="id_klienta" ColumnName="id_klienta" />
+          <ScalarProperty Name="id_firmy" ColumnName="id_firmy" />
+          <ScalarProperty Name="id_statusu" ColumnName="id_statusu" />
+          <ScalarProperty Name="data_zamowienia" ColumnName="data_zamowienia" />
+          <ScalarProperty Name="data_otrzymania" ColumnName="data_otrzymania" />
+          <ScalarProperty Name="kwota_zamowienia" ColumnName="kwota_zamowienia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZamowioneTowaries">
+      <EntityTypeMapping TypeName="systemOrdersModel.ZamowioneTowary">
+        <MappingFragment StoreEntitySet="ZamowioneTowary">
+          <ScalarProperty Name="id_zamowione_tow" ColumnName="id_zamowione_tow" />
+          <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+          <ScalarProperty Name="id_towaru" ColumnName="id_towaru" />
+          <ScalarProperty Name="ilosc" ColumnName="ilosc" />
+          <ScalarProperty Name="kwota" ColumnName="kwota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

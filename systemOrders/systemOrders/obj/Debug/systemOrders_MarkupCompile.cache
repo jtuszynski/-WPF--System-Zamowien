@@ -1,0 +1,20 @@
+﻿systemOrders
+
+
+winexe
+C#
+.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Debug\
+systemOrders
+none
+false
+DEBUG;TRACE
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\App.xaml
+9-616359608
+161701269655
+33761683175
+19-42674209
+Forms\AdminWindow.xaml;Forms\ClientWindow.xaml;Forms\Kontakt.xaml;Forms\PrzegladZamowien.xaml;Forms\UserPanel.xaml;Forms\ZarzadzanieKlientami.xaml;Forms\ZarzadzanieTowarami.xaml;Forms\ZarzadzanieZamowieniami.xaml;MainWindow.xaml;
+
+False
+

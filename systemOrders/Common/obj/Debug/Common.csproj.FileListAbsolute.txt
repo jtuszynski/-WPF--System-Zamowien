@@ -1,0 +1,13 @@
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\bin\Debug\Common.exe.config
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\bin\Debug\Common.exe
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\bin\Debug\Common.pdb
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\MainWindow.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\MainWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\App.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common_MarkupCompile.cache
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common.g.resources
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common.Properties.Resources.resources
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common.csproj.GenerateResource.Cache
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common.exe
+C:\Users\tuszek\Desktop\Projekt\systemOrders\Common\obj\Debug\Common.pdb

@@ -1,0 +1,73 @@
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\systemOrders.exe.config
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\systemOrders.exe
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\systemOrders.pdb
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\Common.exe
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\EntityFramework.dll
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\Common.pdb
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\bin\Release\EntityFramework.xml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders.csprojResolveAssemblyReference.cache
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\AdminWindow.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\Kontakt.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieKlientami.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieTowarami.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieZamowieniami.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\MainWindow.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\AdminWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\Kontakt.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieKlientami.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieTowarami.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieZamowieniami.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\MainWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\App.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders_Content.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders_MarkupCompile.cache
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders.g.resources
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders.Properties.Resources.resources
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders.csproj.GenerateResource.Cache
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders.exe
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders.pdb
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ClientWindow.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\PrzegladZamowien.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\UserPanel.baml
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\ClientWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\PrzegladZamowien.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\Forms\UserPanel.g.cs
+C:\Users\tuszek\Desktop\Projekt\systemOrders\systemOrders\obj\Release\systemOrders_MarkupCompile.lref
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\systemOrders.exe.config
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.exe
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.pdb
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\systemOrders.exe
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\systemOrders.pdb
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\Common.exe
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\EntityFramework.dll
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\Common.pdb
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\EntityFramework.xml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.csprojResolveAssemblyReference.cache
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\AdminWindow.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ClientWindow.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\Kontakt.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\PrzegladZamowien.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\UserPanel.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieKlientami.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieZamowieniami.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\MainWindow.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\AdminWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ClientWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\Kontakt.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\PrzegladZamowien.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\UserPanel.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieKlientami.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieTowarami.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieZamowieniami.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\MainWindow.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\App.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders_Content.g.cs
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders_MarkupCompile.cache
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders_MarkupCompile.lref
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\Forms\ZarzadzanieTowarami.baml
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.g.resources
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.Properties.Resources.resources
+C:\Users\tuszek\Desktop\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.csproj.GenerateResource.Cache
+D:\Gotowe aplikacje\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\bin\Release\systemOrders.exe.config
+D:\Gotowe aplikacje\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.exe
+D:\Gotowe aplikacje\Projekt Jakub Tuszyński - system zamówień\systemOrders\systemOrders\obj\Release\systemOrders.pdb

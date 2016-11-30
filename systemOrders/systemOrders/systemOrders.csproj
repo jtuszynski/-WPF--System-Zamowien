@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF04D45B-415C-4367-9D60-A46BCE272E38}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>systemOrders</RootNamespace>
+    <AssemblyName>systemOrders</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons_small.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Adre.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbModule\LogDB.cs" />
+    <Compile Include="dbModule\LogIn.cs" />
+    <Compile Include="dbModule\TowarDB.cs" />
+    <Compile Include="dbModule\ZamowienieDB.cs" />
+    <Compile Include="dbModule\ZamowionyTowarDB.cs" />
+    <Compile Include="Firma.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientWindow.xaml.cs">
+      <DependentUpon>ClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kontakt.xaml.cs">
+      <DependentUpon>Kontakt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrzegladZamowien.xaml.cs">
+      <DependentUpon>PrzegladZamowien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserPanel.xaml.cs">
+      <DependentUpon>UserPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZarzadzanieKlientami.xaml.cs">
+      <DependentUpon>ZarzadzanieKlientami.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZarzadzanieTowarami.xaml.cs">
+      <DependentUpon>ZarzadzanieTowarami.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZarzadzanieZamowieniami.xaml.cs">
+      <DependentUpon>ZarzadzanieZamowieniami.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Klienci.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EnumEditCreate.cs" />
+    <Compile Include="Models\EnumStatusZamowienia.cs" />
+    <Compile Include="Models\SystemOrdersApp.cs" />
+    <Compile Include="StatusZamowienia.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="systemOrdersModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>systemOrdersModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="systemOrdersModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="systemOrdersModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>systemOrdersModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Towar.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienie.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZamowioneTowary.cs">
+      <DependentUpon>systemOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="Forms\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ClientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Kontakt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\PrzegladZamowien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UserPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ZarzadzanieKlientami.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ZarzadzanieTowarami.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ZarzadzanieZamowieniami.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EntityDeploy Include="systemOrdersModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>systemOrdersModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="systemOrdersModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>systemOrdersModel.edmx</DependentUpon>
+      <LastGenOutput>systemOrdersModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="systemOrdersModel.edmx.diagram">
+      <DependentUpon>systemOrdersModel.edmx</DependentUpon>
+    </None>
+    <None Include="systemOrdersModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>systemOrdersModel.edmx</DependentUpon>
+      <LastGenOutput>systemOrdersModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{d76046fc-3677-41a5-9540-798c26483e91}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\border-all.svg" />
+    <Content Include="Icons\border-bottom.svg" />
+    <Content Include="Icons\border-horizontal.svg" />
+    <Content Include="Icons\border-inner.svg" />
+    <Content Include="Icons\border-left.svg" />
+    <Content Include="Icons\border-none.svg" />
+    <Content Include="Icons\border-outside.svg" />
+    <Content Include="Icons\border-right.svg" />
+    <Content Include="Icons\border-top.svg" />
+    <Content Include="Icons\border-vertical.svg" />
+    <Content Include="Icons\gauge-0.svg" />
+    <Content Include="Icons\gauge-100.svg" />
+    <Content Include="Icons\gauge-25.svg" />
+    <Content Include="Icons\gauge-50.svg" />
+    <Content Include="Icons\gauge-75.svg" />
+    <Content Include="Icons\plus.svg" />
+    <Resource Include="icons_small.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

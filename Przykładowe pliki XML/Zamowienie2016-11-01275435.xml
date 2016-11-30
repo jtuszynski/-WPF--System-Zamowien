@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ArrayOfZamowienieDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ZamowienieDB>
+    <id_zamowienia>6</id_zamowienia>
+    <id_klienta>26</id_klienta>
+    <id_firmy>1</id_firmy>
+    <id_statusu>1</id_statusu>
+    <data_zamowienia>0001-01-01T00:00:00</data_zamowienia>
+    <data_otrzymania>2016-11-01T00:00:00</data_otrzymania>
+    <kwota_zamowienia xsi:nil="true" />
+    <zamowione_towary>
+      <ZamowionyTowarDB>
+        <Kwota>4650.00</Kwota>
+        <Ilosc>1</Ilosc>
+        <Nazwa_towaru>Telewizor SAMSUNG 46'</Nazwa_towaru>
+        <Id_towaru>5</Id_towaru>
+      </ZamowionyTowarDB>
+    </zamowione_towary>
+  </ZamowienieDB>
+</ArrayOfZamowienieDB>
